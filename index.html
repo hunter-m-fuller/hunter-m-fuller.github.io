@@ -1,21 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Hunter Fuller | Mechanical Engineering Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hunter Fuller | Mechanical Engineering Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
+  <div class="container">
+    <header class="hero">
+      <h1>Hunter Fuller</h1>
+      <p class="subtitle">Mechanical Engineering Student | BYU-Idaho</p>
+      <p class="intro">
+        Mechanical engineering student focused on product design, prototyping,
+        CAD, and engineering analysis.
+      </p>
+      <div class="hero-buttons">
+        <a class="button" href="#projects">View Projects</a>
+        <a class="button button-outline" href="pdfs/resume.pdf" target="_blank">Resume</a>
+      </div>
+    </header>
 
-<h1>Hunter Fuller</h1>
-<p>Mechanical Engineering Student | BYU-Idaho</p>
+    <section class="skills">
+      <h2>Core Skills</h2>
+      <div class="tags">
+        <span>SolidWorks</span>
+        <span>MATLAB</span>
+        <span>Python</span>
+        <span>Product Design</span>
+        <span>Prototyping</span>
+        <span>Testing</span>
+      </div>
+    </section>
 
-<h2>Projects</h2>
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <div class="card">
+          <img src="images/paintmate.jpg" alt="PaintMate project image">
+          <h3>PaintMate</h3>
+          <p>Reusable microfiber paint application concept focused on reducing waste and improving reusability.</p>
+          <div class="tags small-tags">
+            <span>Design</span>
+            <span>Prototype</span>
+            <span>SolidWorks</span>
+          </div>
+          <div class="card-buttons">
+            <a class="button" href="projects/paintmate.html">View Project</a>
+            <a class="button button-outline" href="pdfs/paintmate.pdf" target="_blank">PDF</a>
+          </div>
+        </div>
 
-<ul>
-<li><a href="projects/paintmate.html">PaintMate</a></li>
-<li><a href="projects/gokart.html">Go-Kart Build</a></li>
-<li><a href="projects/drag.html">Drag Force Experiment</a></li>
-</ul>
+        <div class="card">
+          <img src="images/gokart.jpg" alt="Go-kart project image">
+          <h3>Go-Kart Build</h3>
+          <p>Hands-on fabrication project involving frame construction, assembly, and system integration.</p>
+          <div class="tags small-tags">
+            <span>Fabrication</span>
+            <span>Assembly</span>
+            <span>Team Project</span>
+          </div>
+          <div class="card-buttons">
+            <a class="button" href="projects/gokart.html">View Project</a>
+            <a class="button button-outline" href="pdfs/gokart.pdf" target="_blank">PDF</a>
+          </div>
+        </div>
 
+        <div class="card">
+          <img src="images/draglab.jpg" alt="Drag force experiment image">
+          <h3>Drag Force Experiment</h3>
+          <p>Experimental and computational analysis of drag force behavior across varying flow conditions.</p>
+          <div class="tags small-tags">
+            <span>Analysis</span>
+            <span>Python</span>
+            <span>Testing</span>
+          </div>
+          <div class="card-buttons">
+            <a class="button" href="projects/drag.html">View Project</a>
+            <a class="button button-outline" href="pdfs/drag.pdf" target="_blank">PDF</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>Contact: your email | LinkedIn | GitHub</p>
+    </footer>
+  </div>
 </body>
 </html>
