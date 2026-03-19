@@ -8,9 +8,11 @@
 </head>
 <body>
   <div class="container">
+
     <header class="hero">
-      <h1>Hunter Fuller</h1>
-      <p class="subtitle">Mechanical Engineering Student | BYU-Idaho</p>
+      <span class="hero-eyebrow">Mechanical Engineering Portfolio</span>
+      <h1>Hunter <em>Fuller</em></h1>
+      <p class="subtitle">B.S. Mechanical Engineering · BYU-Idaho</p>
       <p class="intro">
         Designing, analyzing, and testing mechanical systems to solve real engineering problems.
       </p>
@@ -20,8 +22,11 @@
       </div>
     </header>
 
+    <hr class="section-divider" />
+
     <section class="skills">
       <h2>Core Skills</h2>
+      <!-- Add or remove <span> tags here to update your skills list -->
       <div class="tags">
         <span>SolidWorks</span>
         <span>SolidEdge</span>
@@ -32,65 +37,96 @@
         <span>Product Design</span>
         <span>Prototyping</span>
         <span>Testing</span>
-        <span>Billingual</span>
-        <span>Team Collaberation</span>
+        <span>Bilingual</span>
+        <span>Team Collaboration</span>
         <span>Team Presentation</span>
       </div>
     </section>
 
+    <hr class="section-divider" />
+
     <section id="projects">
       <h2>Projects</h2>
       <div class="project-grid">
+
+        <!-- ═══════════════════════════════════════════════════
+             PROJECT CARD — Copy this whole block to add a new project.
+             Checklist for each new card:
+               1. src="images/YOUR_IMAGE.jpg"        → upload image to /images/
+               2. alt="..."                           → describe the image
+               3. <h3>Project Title</h3>
+               4. <p>Short description...</p>
+               5. Add/remove <span> tags for skills
+               6. href="projects/YOUR_PAGE.html"     → create page in /projects/
+               7. href="pdfs/YOUR_FILE.pdf"           → upload PDF to /pdfs/
+        ═══════════════════════════════════════════════════ -->
+
+        <!-- PROJECT: PaintMate Paintbrush -->
         <div class="card">
-          <img src="images/PaintMatePaintBrush.jpeg" alt="PaintMate Paintbrush project image">
-          <h3>PaintMate Paintbrush</h3>
-          <p>An addition to the PaintMate reusable microfiber sleeve, aimed at increasing its use in multiple aspects of painting, including detail work.</p>
-          <div class="tags small-tags">
-            <span>Design</span>
-            <span>Prototype</span>
-            <span>SolidWorks</span>
-          </div>
-          <div class="card-buttons">
-            <a class="button" href="projects/PaintMatePaintbrush.html">View Project</a>
-            <a class="button button-outline" href="pdfs/PaintMatePaintbrush.pdf" target="_blank">PDF</a>
+          <img class="card-image" src="images/PaintMatePaintBrush.jpeg" alt="PaintMate Paintbrush project image">
+          <div class="card-body">
+            <h3>PaintMate Paintbrush</h3>
+            <p>An addition to the PaintMate reusable microfiber sleeve, aimed at increasing its use in multiple aspects of painting, including detail work.</p>
+            <div class="tags small-tags">
+              <span>Design</span>
+              <span>Prototype</span>
+              <span>SolidWorks</span>
+            </div>
+            <div class="card-buttons">
+              <a class="button" href="projects/PaintMatePaintbrush.html">View Project</a>
+              <a class="button button-outline" href="pdfs/PaintMatePaintbrush.pdf" target="_blank">PDF</a>
+            </div>
           </div>
         </div>
 
+        <!-- PROJECT: Go-Kart Build -->
         <div class="card">
-          <img src="images/gokart.jpg" alt="Go-kart project image">
-          <h3>Go-Kart Build</h3>
-          <p>Hands-on fabrication project involving frame construction, assembly, and system integration.</p>
-          <div class="tags small-tags">
-            <span>Fabrication</span>
-            <span>Assembly</span>
-            <span>Team Project</span>
-          </div>
-          <div class="card-buttons">
-            <a class="button" href="projects/gokart.html">View Project</a>
-            <a class="button button-outline" href="pdfs/gokart.pdf" target="_blank">PDF</a>
+          <img class="card-image" src="images/gokart.jpg" alt="Go-kart project image">
+          <div class="card-body">
+            <h3>Go-Kart Build</h3>
+            <p>Hands-on fabrication project involving frame construction, assembly, and system integration.</p>
+            <div class="tags small-tags">
+              <span>Fabrication</span>
+              <span>Assembly</span>
+              <span>Team Project</span>
+            </div>
+            <div class="card-buttons">
+              <a class="button" href="projects/gokart.html">View Project</a>
+              <a class="button button-outline" href="pdfs/gokart.pdf" target="_blank">PDF</a>
+            </div>
           </div>
         </div>
 
+        <!-- PROJECT: Drag Force Experiment -->
         <div class="card">
-          <img src="images/draglab.jpg" alt="Drag force experiment image">
-          <h3>Drag Force Experiment</h3>
-          <p>Experimental and computational analysis of drag force behavior across varying flow conditions.</p>
-          <div class="tags small-tags">
-            <span>Analysis</span>
-            <span>Python</span>
-            <span>Testing</span>
-          </div>
-          <div class="card-buttons">
-            <a class="button" href="projects/drag.html">View Project</a>
-            <a class="button button-outline" href="pdfs/drag.pdf" target="_blank">PDF</a>
+          <img class="card-image" src="images/draglab.jpg" alt="Drag force experiment image">
+          <div class="card-body">
+            <h3>Drag Force Experiment</h3>
+            <p>Experimental and computational analysis of drag force behavior across varying flow conditions.</p>
+            <div class="tags small-tags">
+              <span>Analysis</span>
+              <span>Python</span>
+              <span>Testing</span>
+            </div>
+            <div class="card-buttons">
+              <a class="button" href="projects/drag.html">View Project</a>
+              <a class="button button-outline" href="pdfs/drag.pdf" target="_blank">PDF</a>
+            </div>
           </div>
         </div>
+
+        <!-- ADD NEW PROJECTS ABOVE THIS LINE -->
+
       </div>
     </section>
 
     <footer>
-      <p>Contact: huntermfuller@gmail.com | https://www.linkedin.com/in/hunterfuller/ </p>
+      <p>
+        huntermfuller@gmail.com &nbsp;·&nbsp;
+        <a href="https://www.linkedin.com/in/hunterfuller/" target="_blank">LinkedIn</a>
+      </p>
     </footer>
+
   </div>
 </body>
 </html>
