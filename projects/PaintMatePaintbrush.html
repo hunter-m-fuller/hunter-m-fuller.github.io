@@ -95,12 +95,15 @@
     }
 
     .hero-image-wrap img {
-      width: 100%;
-      height: 480px;
+      width: 480px;
+      height: 100%;
       object-fit: contain;
       image-orientation: from-image;
       display: block;
-      transform: rotate(90deg);
+      transform: rotate(90deg) translateX(-50%);
+      transform-origin: top left;
+      position: relative;
+      left: 50%;
     }
 
     .fig-caption {
@@ -129,17 +132,20 @@
     }
 
     .secondary-images img {
-      width: 100%;
-      height: 260px;
+      width: 260px;
+      height: 100%;
       object-fit: contain;
       image-orientation: from-image;
       display: block;
-      transition: transform 0.3s ease;
-      transform: rotate(90deg);
+      transform: rotate(90deg) translateX(-50%);
+      transform-origin: top left;
+      position: relative;
+      left: 50%;
+      transition: filter 0.3s ease;
     }
 
     .secondary-images .img-wrap:hover img {
-      transform: rotate(90deg) scale(1.02);
+      filter: brightness(1.05);
     }
 
     /* ── INFO SECTION ─────────────────────────────────────── */
