@@ -256,7 +256,7 @@
 
       <!-- HERO IMAGE -->
       <div class="hero-image-wrap">
-        <img src="../images/BlindsBuddy1.jpeg" alt="Electronics integrated into the 3D-printed enclosure during assembly">
+        <img src="../images/IMG_4825.jpeg" alt="Electronics integrated into the 3D-printed enclosure during assembly">
       </div>
       <p class="fig-caption">Fig. 1 — Electronics integrated into the 3D-printed enclosure during assembly, showing the LCD screen, passive buzzer, RGB LED, IR sensor, photoresistor (top left), and DC stepper motor (top right).</p>
 
@@ -265,14 +265,14 @@
 
         <figure>
           <div class="img-wrap">
-            <img src="../images/BlindsBuddy2.jpeg" alt="Completed enclosure powered on displaying MANUAL MODE">
+            <img src="../images/IMG_4828.jpeg" alt="Completed enclosure powered on displaying MANUAL MODE">
           </div>
           <p class="fig-caption">Fig. 2 — Completed enclosure powered on, LCD displaying "MANUAL MODE" and RGB LED indicating system status.</p>
         </figure>
 
         <figure>
           <div class="img-wrap">
-            <img src="../images/BlindsBuddy3.jpeg" alt="Final product mounted on the wall adjacent to the window blinds">
+            <img src="../images/IMG_4848.jpeg" alt="Final product mounted on the wall adjacent to the window blinds">
           </div>
           <p class="fig-caption">Fig. 3 — Final product mounted on the wall adjacent to the window blinds, stepper motor coupled to the blind rod.</p>
         </figure>
