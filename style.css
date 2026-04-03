@@ -4,10 +4,10 @@
   --bg: #f4f1ec;
   --surface: #ffffff;
   --ink: #1a1a18;
-  --ink-muted: #6b6b63;
+  --ink-muted: #3f3f38;
   --accent: #1f3a5f;
   --accent-light: #e8edf4;
-  --accent-warm: #c8a96e;
+  --accent-warm: #a07828;
   --border: #e0dcd4;
   --radius: 4px;
   --radius-lg: 12px;
@@ -102,7 +102,7 @@ body {
   max-width: 540px;
   font-size: 1.08rem;
   color: var(--ink-muted);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.75;
   margin-bottom: 36px;
 }
@@ -189,7 +189,7 @@ body {
   color: var(--ink-muted);
   line-height: 1.8;
   margin-bottom: 16px;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .about-text p:last-child { margin-bottom: 0; }
@@ -462,7 +462,7 @@ body {
 .contact-intro {
   font-size: 0.97rem;
   color: var(--ink-muted);
-  font-weight: 300;
+  font-weight: 400;
   max-width: 520px;
   line-height: 1.75;
   margin-bottom: 36px;
@@ -595,7 +595,7 @@ footer a:hover { text-decoration: underline; }
 .project-header .subtitle {
   font-size: 1rem;
   color: var(--ink-muted);
-  font-weight: 300;
+  font-weight: 400;
   max-width: 600px;
   margin-bottom: 24px;
   animation: fadeUp 0.6s 0.1s ease both;
