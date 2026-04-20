@@ -102,51 +102,117 @@
   <div class="container">
 
     <section class="visuals">
+
+      <!-- HERO IMAGE: S-N curve — stress amplitude vs. number of cycles,
+           red prediction line vs. black actual data points -->
       <div class="hero-image-wrap">
-        <img src="../images/fatigue_hero.jpg" alt="SolidWorks fatigue simulation result on dogbone specimen">
+        <img src="../images/Fatigue_Lab_3_Moment.jpg" alt="S-N curve showing predicted fatigue life vs. experimental results">
       </div>
-      <p class="fig-caption">Fig. 1 — SolidWorks fatigue simulation showing stress distribution on the 1020 HR steel dogbone specimen (Ø0.25 in. neck, 4 in. total length).</p>
+      <!-- Fig. 1 caption suggestions:
+           - Describe what the axes show (stress in kpsi vs. number of cycles, log scale)
+           - Note the red prediction line vs. actual data points
+           - Mention where predictions and actuals diverge (e.g. near the endurance limit)
+           Example: "Fig. 1 — S-N curve for 1020 HR steel: red line shows Shigley's predicted
+           fatigue life; black points show experimental results. Actual specimens consistently
+           outlasted predictions, particularly near the endurance limit." -->
+      <p class="fig-caption">Fig. 1 — <!-- YOUR CAPTION HERE --></p>
+
       <div class="secondary-images">
+
         <figure>
+          <!-- SECONDARY LEFT: Engineering drawing of the dogbone specimen -->
           <div class="img-wrap">
-            <img src="../images/Fatigue_Lab_3_Drawing.JPG" alt="Engineering drawing of the fatigue test specimen">
+            <img src="../images/Fatigue_Lab_3_Drawing.jpg" alt="Engineering drawing of the dogbone fatigue specimen">
           </div>
-          <p class="fig-caption">Fig. 2 — Engineering drawing of the dogbone specimen: 4 in. total length, 1.50 in. gauge section, Ø0.50 in. grip / Ø0.25 in. neck.</p>
+          <!-- Fig. 2 caption suggestions:
+               - State it's the specimen drawing used for SolidWorks modeling and fabrication
+               - Call out key dimensions: 4 in. total, 1.50 in. gauge section,
+                 Ø0.50 in. grip diameter, Ø0.25 in. neck diameter
+               Example: "Fig. 2 — Dogbone specimen drawing: 4 in. total length,
+               1.50 in. gauge section, Ø0.50 in. grip / Ø0.25 in. reduced neck." -->
+          <p class="fig-caption">Fig. 2 — <!-- YOUR CAPTION HERE --></p>
         </figure>
+
         <figure>
+          <!-- SECONDARY RIGHT: Photo of the rotating bending fatigue machine -->
           <div class="img-wrap">
-            <img src="../images/Fatigue_Lab_3_Moment.JPG" alt="Moment diagram showing applied loading on fatigue machine">
+            <img src="../images/FatigueLabMachine.jpg" alt="Rotating bending fatigue testing machine">
           </div>
-          <p class="fig-caption">Fig. 3 — Loading diagram illustrating the applied moment arm and weight used to generate fully reversed cyclic bending stress.</p>
+          <!-- Fig. 3 caption suggestions:
+               - Identify the machine type (rotating bending fatigue machine)
+               - Mention what it does (applies fully reversed cyclic bending stress)
+               - Note the cycle counter on the front panel
+               Example: "Fig. 3 — Rotating bending fatigue machine used for testing.
+               The specimen is loaded in bending and rotated, applying fully reversed
+               cyclic stress. The front counter records cycles to failure." -->
+          <p class="fig-caption">Fig. 3 — <!-- YOUR CAPTION HERE --></p>
         </figure>
+
       </div>
     </section>
 
     <div class="info-blocks">
+
       <div class="info-block">
         <h2>Objectives</h2>
         <ul>
-          <li>Accurately predict the fatigue life of 1020 HR steel specimens across a range of stress amplitudes between 1,000 and 1,000,000 cycles.</li>
-          <li>Reconstruct an experimental S-N curve using rotating bending fatigue tests under fully reversed cyclic loading, and compare results against analytical predictions from Shigley's.</li>
+          <!-- Suggest: State the goal — predicting fatigue life across a stress range.
+               e.g. "Predict the fatigue life of 1020 HR steel specimens across stress
+               amplitudes corresponding to 1,000 to 1,000,000 cycles." -->
+          <!-- <li>YOUR BULLET HERE</li> -->
+
+          <!-- Suggest: State what you were validating against.
+               e.g. "Reconstruct an experimental S-N curve using rotating bending fatigue
+               tests and compare against analytical predictions from Shigley's." -->
+          <!-- <li>YOUR BULLET HERE</li> -->
         </ul>
       </div>
+
       <div class="info-block">
         <h2>Outcomes &amp; Contributions</h2>
         <ul>
-          <li>Experimental data closely tracked the shape of the theoretical S-N curve, with analytical predictions consistently underestimating actual cycles to failure.</li>
-          <li>Determined that 1020 HR steel exhibits an infinite life threshold near 5 million cycles — higher than the standard 1 million cycle assumption.</li>
-          <li>Modeled the specimen geometry in SolidWorks and ran static and fatigue FEA simulations to validate stress concentrations at the reduced-diameter neck.</li>
+          <!-- Suggest: How did results compare to predictions?
+               e.g. "Experimental data tracked the S-N curve shape, with analytical
+               predictions consistently underestimating actual cycles to failure." -->
+          <!-- <li>YOUR BULLET HERE</li> -->
+
+          <!-- Suggest: Key finding about endurance limit.
+               e.g. "Identified an infinite life threshold near 5 million cycles —
+               higher than the standard 1 million cycle assumption." -->
+          <!-- <li>YOUR BULLET HERE</li> -->
+
+          <!-- Suggest: SolidWorks FEA contribution if applicable.
+               e.g. "Modeled specimen in SolidWorks and ran fatigue FEA to validate
+               stress concentrations at the reduced-diameter neck." -->
+          <!-- <li>YOUR BULLET HERE</li> -->
         </ul>
       </div>
+
       <div class="info-block">
         <h2>Technical Details &amp; Skills</h2>
         <ul>
-          <li>Dogbone specimens (Ø0.50 in. grip, Ø0.25 in. neck, 4 in. total) modeled in SolidWorks to determine maximum tensile force before failure.</li>
-          <li>Specimens tested on a rotating bending fatigue machine at varied weight loads to produce different stress amplitudes under fully reversed cyclic loading.</li>
-          <li>Applied moment calculated from weight and arm length; stress amplitude derived using flexural stress equations and Marin correction factors.</li>
-          <li>Results plotted on a log-log S-N diagram and compared against Shigley's Figure 6-17(c) reference curve for 1020 HR steel.</li>
+          <!-- Suggest: Specimen modeling details.
+               e.g. "Dogbone specimens (Ø0.50 in. grip, Ø0.25 in. neck, 4 in. total)
+               modeled in SolidWorks to determine maximum tensile force before failure." -->
+          <!-- <li>YOUR BULLET HERE</li> -->
+
+          <!-- Suggest: Testing method.
+               e.g. "Specimens tested at varied weight loads on a rotating bending fatigue
+               machine to produce different stress amplitudes under fully reversed loading." -->
+          <!-- <li>YOUR BULLET HERE</li> -->
+
+          <!-- Suggest: Analytical method.
+               e.g. "Stress amplitude derived from applied moment, flexural stress equations,
+               and Marin correction factors from Shigley's." -->
+          <!-- <li>YOUR BULLET HERE</li> -->
+
+          <!-- Suggest: How data was analyzed/plotted.
+               e.g. "Results plotted on a log-log S-N diagram and compared against
+               Shigley's Figure 6-17(c) reference curve for 1020 HR steel." -->
+          <!-- <li>YOUR BULLET HERE</li> -->
         </ul>
       </div>
+
     </div>
 
     <div class="project-footer-bar">
