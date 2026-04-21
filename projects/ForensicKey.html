@@ -1,1 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forensic Failure Analysis | Hunter Fuller</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #1f3a5f;
+      --gold: #a07828;
+      --parchment: #f4f1ec;
+      --text: #2c2c2c;
+      --muted: #666;
+      --light-border: #ddd;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--parchment); color: var(--text); min-height: 100vh; }
 
+    nav { background: var(--navy); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    nav a.logo { font-family: 'DM Serif Display', serif; color: #fff; text-decoration: none; font-size: 1.15rem; letter-spacing: 0.02em; }
+    nav ul { list-style: none; display: flex; gap: 2rem; }
+    nav ul a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    nav ul a:hover { color: #fff; }
+
+    .page-hero { background: var(--navy); padding: 3rem 2rem 2.5rem; text-align: center; }
+    .page-hero .category { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+    .page-hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(1.9rem, 4vw, 2.8rem); color: #fff; margin-bottom: 0.75rem; line-height: 1.2; }
+    .page-hero .subtitle { color: rgba(255,255,255,0.65); font-size: 1rem; max-width: 600px; margin: 0 auto; }
+
+    .hero-meta { max-width: 1100px; margin: 0 auto; padding: 1.25rem 2rem 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem 4rem; }
+
+    .visuals { margin-bottom: 48px; }
+    .hero-image-wrap { width: 100%; overflow: hidden; border: 1px solid var(--light-border); background: #e8e5e0; margin-bottom: 6px; }
+    .hero-image-wrap img { width: 100%; height: 500px; object-fit: contain; image-orientation: from-image; display: block; }
+    .fig-caption { font-size: 0.78rem; color: var(--muted); margin-bottom: 16px; padding-left: 4px; font-style: italic; }
+    .secondary-images { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .secondary-images figure { margin: 0; }
+    .secondary-images .img-wrap { overflow: hidden; border: 1px solid var(--light-border); background: #e8e5e0; margin-bottom: 6px; }
+    .secondary-images img { width: 100%; height: 360px; object-fit: contain; image-orientation: from-image; display: block; transition: filter 0.3s ease; }
+    .secondary-images .img-wrap:hover img { filter: brightness(1.05); }
+
+    .info-blocks { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2.5rem; }
+    .info-block h2 { font-family: 'DM Sans', sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); border-bottom: 2px solid var(--gold); padding-bottom: 0.4rem; margin-bottom: 1rem; }
+    .info-block ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.65rem; }
+    .info-block ul li { font-size: 0.92rem; color: var(--text); line-height: 1.55; padding-left: 1rem; position: relative; }
+    .info-block ul li::before { content: '—'; position: absolute; left: 0; color: var(--gold); font-size: 0.8rem; }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2.5rem; }
+    .tag { background: transparent; border: 1.5px solid var(--navy); color: var(--navy); font-size: 0.78rem; font-weight: 600; padding: 0.3rem 0.75rem; border-radius: 3px; letter-spacing: 0.04em; }
+
+    .project-footer-bar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; padding: 32px 0 60px; border-top: 1px solid var(--light-border); }
+    .back-link { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--navy); font-size: 0.88rem; font-weight: 600; text-decoration: none; border-bottom: 1.5px solid var(--gold); padding-bottom: 1px; transition: opacity 0.2s; }
+    .back-link:hover { opacity: 0.7; }
+    .button { display: inline-block; padding: 0.55rem 1.25rem; background: var(--navy); color: #fff; font-size: 0.85rem; font-weight: 600; text-decoration: none; border-radius: 4px; transition: opacity 0.2s; }
+    .button:hover { opacity: 0.85; }
+    .button-outline { background: transparent; border: 2px solid var(--navy); color: var(--navy); }
+
+    footer { background: var(--navy); color: rgba(255,255,255,0.55); text-align: center; padding: 1.5rem 2rem; font-size: 0.8rem; }
+    footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+    footer a:hover { color: #fff; }
+
+    @media (max-width: 700px) {
+      .secondary-images { grid-template-columns: 1fr; }
+      .info-blocks { grid-template-columns: 1fr; }
+      .hero-image-wrap img { height: 320px; }
+      .secondary-images img { height: 260px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="logo" href="../index.html">Hunter Fuller</a>
+    <ul>
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <div class="category">Experiments &amp; Analysis</div>
+    <h1>Forensic Failure Analysis — Brass Key</h1>
+    <p class="subtitle">Materials science investigation identifying the failure mode, material composition, and design improvements for a fractured household key.</p>
+  </div>
+
+  <div class="hero-meta">
+    <div class="tags">
+      <span class="tag">Materials Science</span>
+      <span class="tag">SolidWorks</span>
+      <span class="tag">FEA</span>
+      <span class="tag">Fatigue Analysis</span>
+      <span class="tag">Rockwell Hardness</span>
+    </div>
+    <a class="button button-outline" href="../pdfs/ForensicKey.pdf" target="_blank">Download PDF</a>
+  </div>
+
+  <div class="container">
+
+    <section class="visuals">
+
+      <!-- HERO IMAGE: FEA von Mises stress result from SolidWorks
+           showing stress concentration at the fracture point under 4 lb torsional load -->
+      <div class="hero-image-wrap">
+        <img src="../images/ForensicFEA.jpg" alt="SolidWorks FEA von Mises stress distribution on brass key showing torsional failure point">
+      </div>
+      <!-- Fig. 1 caption suggestions:
+           - Identify it as a SolidWorks FEA result
+           - Note the load applied (4 lbs torsional)
+           - Mention the peak stress location (neck/blade junction) and that it exceeded yield strength (34.8 ksi)
+           - e.g. "Fig. 1 — SolidWorks von Mises FEA under 4 lb torsional load. Peak stress at the
+             blade-bow junction exceeded the fatigue-reduced yield strength of 34.8 ksi,
+             confirming torsional fatigue as the failure mode." -->
+      <p class="fig-caption">Fig. 1 — <!-- YOUR CAPTION HERE --></p>
+
+      <div class="secondary-images">
+
+        <figure>
+          <!-- SECONDARY LEFT: Photo of the fractured key (45° split, slide 2)
+               Shows the broken brass key next to an intact reference key -->
+          <div class="img-wrap">
+            <img src="../images/ForensicKeyFracture.jpg" alt="Fractured brass household key showing 45-degree torsional split">
+          </div>
+          <!-- Fig. 2 caption suggestions:
+               - Describe the fracture angle (~45°) and what that indicates (torsional shear)
+               - Note it split the following day after being jammed
+               - e.g. "Fig. 2 — Fractured brass key (left) next to intact reference key (right).
+                 The ~45° split angle is characteristic of torsional shear failure,
+                 consistent with repeated jamming cycles over the key's 15-year lifespan." -->
+          <p class="fig-caption">Fig. 2 — <!-- YOUR CAPTION HERE --></p>
+        </figure>
+
+        <figure>
+          <!-- SECONDARY RIGHT: S-N curve for brass alloy (slide 7)
+               Shows fatigue life vs. stress amplitude, with yield point marked at ~1.35M cycles -->
+          <div class="img-wrap">
+            <img src="../images/ForensicSNCurve.jpg" alt="S-N curve for brass alloy showing fatigue strength at estimated cycle count">
+          </div>
+          <!-- Fig. 3 caption suggestions:
+               - Identify it as the brass alloy S-N curve
+               - Note where 1,357,800 estimated lifetime cycles lands on the curve
+               - Call out the resulting fatigue-reduced yield stress (~212 MPa / 30.7 ksi)
+               - e.g. "Fig. 3 — S-N curve for brass alloy. At the estimated lifetime cycle count
+                 of ~1.36M, fatigue reduces the effective yield stress to approximately
+                 212 MPa (30.7 ksi) — below the peak FEA stress of 47.2 ksi." -->
+          <p class="fig-caption">Fig. 3 — <!-- YOUR CAPTION HERE --></p>
+        </figure>
+
+      </div>
+    </section>
+
+    <div class="info-blocks">
+
+      <div class="info-block">
+        <h2>Objectives</h2>
+        <ul>
+          <!-- Suggest: State the forensic goal — identify what caused the key to fail.
+               e.g. "Determine the failure mode of a brass household key that fractured
+               after being forced in a jammed lock." -->
+          <!-- <li>YOUR BULLET HERE</li> -->
+
+          <!-- Suggest: State the material identification goal.
+               e.g. "Identify the key's material through non-destructive and
+               destructive testing including visual inspection, magnet test,
+               Rockwell hardness, spark test, and scratch test." -->
+          <!-- <li>YOUR BULLET HERE</li> -->
+
+          <!-- Suggest: State the analysis/validation goal.
+               e.g. "Validate the failure hypothesis analytically using stress
+               concentration calculations and SolidWorks FEA." -->
+          <!-- <li>YOUR BULLET HERE</li> -->
+        </ul>
+      </div>
+
+      <div class="info-block">
+        <h2>Outcomes &amp; Contributions</h2>
+        <ul>
+          <!-- Suggest: Confirm material identification result.
+               e.g. "Testing confirmed the key was soft brass (RHB avg. 54.6),
+               within the brass range of 55–93 but at the lower end,
+               indicating an annealed or work-softened alloy." -->
+          <!-- <li>YOUR BULLET HERE</li> -->
+
+          <!-- Suggest: State the failure mode conclusion.
+               e.g. "Identified torsional fatigue as the failure mode — the ~45° fracture
+               angle and FEA stress concentration at the blade-bow junction both
+               confirm shear-driven crack propagation." -->
+          <!-- <li>YOUR BULLET HERE</li> -->
+
+          <!-- Suggest: Quantify the fatigue effect.
+               e.g. "Over an estimated 1,357,800 lifetime cycles, fatigue reduced the
+               key's effective yield strength from 34.8 ksi to 30.7 ksi —
+               insufficient to resist the peak torsional stress of 47.2 ksi." -->
+          <!-- <li>YOUR BULLET HERE</li> -->
+
+          <!-- Suggest: State the design recommendation (slide 10 content).
+               e.g. "Recommended switching to nickel-silver alloy (HRB 85,
+               max shear stress 52.8 ksi, fatigue strength 36.8 ksi at 15 years)
+               and repairing the jammed lock mechanism to reduce cyclic overload." -->
+          <!-- <li>YOUR BULLET HERE</li> -->
+        </ul>
+      </div>
+
+      <div class="info-block">
+        <h2>Technical Details &amp; Skills</h2>
+        <ul>
+          <!-- Suggest: Describe the material identification tests performed.
+               e.g. "Performed Rockwell B hardness testing (5 readings, avg. 54.6 RHB),
+               magnet test, visual color inspection, spark test, and scratch test
+               to identify and confirm brass composition." -->
+          <!-- <li>YOUR BULLET HERE</li> -->
+
+          <!-- Suggest: Describe the cycle life estimation method.
+               e.g. "Estimated total lifetime cycles (~1.36M) from usage assumptions:
+               key age, daily lock/unlock frequency, jam frequency,
+               and torque magnification factor." -->
+          <!-- <li>YOUR BULLET HERE</li> -->
+
+          <!-- Suggest: Describe the stress concentration calculation.
+               e.g. "Calculated nominal torsional stress (τ = Tr/J = 14.211 ksi)
+               and critical crack size using fracture mechanics
+               (K_IIc = 1.7K_Ic, a = 0.0714 in.)." -->
+          <!-- <li>YOUR BULLET HERE</li> -->
+
+          <!-- Suggest: Describe the FEA work.
+               e.g. "Modeled key geometry in SolidWorks and ran static FEA
+               under 4 lb torsional load, confirming peak von Mises stress
+               of 47.2 ksi at the blade-bow junction — exceeding the
+               fatigue-reduced yield strength of 34.8 ksi." -->
+          <!-- <li>YOUR BULLET HERE</li> -->
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="project-footer-bar">
+      <a class="back-link" href="../index.html">← Back to Projects</a>
+      <a class="button" href="../pdfs/ForensicKey.pdf" target="_blank">Download PDF</a>
+    </div>
+
+  </div>
+
+  <footer>
+    Hunter Fuller · Mechanical Engineering · 2026 &nbsp;|&nbsp;
+    <a href="https://hunter-m-fuller.github.io/">Portfolio</a> &nbsp;·&nbsp;
+    <a href="https://www.linkedin.com/in/hunterfuller/">LinkedIn</a>
+  </footer>
+
+</body>
+</html>
